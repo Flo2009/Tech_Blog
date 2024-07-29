@@ -1,0 +1,52 @@
+
+
+<h1>{{ posts.user.name}}{{posts.user.name}}'s Posts</h1>
+
+{{!-- Iterate over each blog post --}}
+
+  <div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="">{{posts.title}}</a>
+    </h2>
+   
+    <p>Created by {{posts.user.name}} on {{format_date posts.date_created}}</p>
+     <h3>Comments</h3>
+    {{#if posts.comments}}
+      <ul>
+        {{#each posts.comments}}
+          <li>
+            <p>{{this.text}}</p>
+            <small>By {{this.user.name}} on {{format_date this.date_created}}</small>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No comments yet.</p>
+    {{/if}}
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{posts.text}}
+    </p>
+  </div>
+  <div class="col-md-4">
+      <button class="btn btn-sm" id="add-comment-button" data-id="{{post.id}}">Leave a comment</button>
+  </div>
+  {{!-- <div class="col-md-4">
+       <button class="btn btn-sm btn-danger delete-post-button" data-id="{{this.id}}">DELETE</button>
+  </div>
+  <div class="col-md-4">
+      <button class="btn btn-sm update-post-button" data-id="{{this.id}}">Update</button>
+  </div> --}}
+       
+  <form id="new-comment-form" style="display:none;">
+    <textarea id="comment-content" name="content" placeholder="Leave a comment"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+

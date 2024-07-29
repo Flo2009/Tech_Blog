@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+
+
+  {{#if posts.length}}
+  <div class="col-md-12">
+    <h3>Your Blogs:</h3>
+   
+    {{!-- Iterate over each blog post --}}
+    {{#each posts as |post|}} 
+      <div class="row mb-4">
+        <div class="col-md-5">
+          <h2>
+            <a href="/post/{{this.id}}">{{this.title}}</a>
+          </h2>
+          <div class="col-md-7">
+          <p>
+            {{post.text}}
+          </p>
+        </div>
+        {{!-- <p>Created by {{name}} on {{format_date post.date_created}}</p> --}}
+          <h3>Comments</h3>
+          {{#if this.comments.length}}
+            <ul>
+              {{#each this.comments}}
+                <li>
+                  <p>{{this.text}}</p>
+                  <small>By {{this.user.name}} on {{format_date this.date_created}}</small>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <p>No comments yet.</p>
+        
+          
+        </div>
+          {{/if}}
+        
+        <div class="col-md-4">
+            <button class="btn btn-sm btn-danger delete-post-button" data-id="{{post.id}}">DELETE</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-sm update-post-button" data-id="{{post.id}}">Update</button>
+        </div>  
+      </div>
+      <div>
+
+      </div>
+  </div>
+   
+    {{/each}}
+      
+   {{/if}}
+  
+
+{{!-- <script src="./js/profile.js"></script> --}}
+

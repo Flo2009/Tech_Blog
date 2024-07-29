@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Post about my new App",
+    "text": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "user_id": 1
+  },
+  {
+    "title": "Bootcamp Post",
+    "text": "Bootcamp is fun but hard",
+    "user_id": 3
+  }, 
+  {
+    "title": "Fun with JavaScrip",
+    "text": "The Sequelize library is a very handy tool to make API routes",
+    "user_id": 2
+  },
+  {
+    "title": "RESTful APIs",
+    "text": "REST API's are one possibility to provide data from a Database to the front end",
+    "user_id": 1
+  }
+]
