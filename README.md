@@ -38,8 +38,8 @@ You can update or delete them.
 You or anyone else can leave a comment by clicking on the post name.
 
 
-![BlogPage1](./images/blog_2.gif)
-![BlogPage2](./images/blog_1.gif)
+![BlogPage1](/src/images/blog_2.gif)
+![BlogPage2](/src/images/blog_1.gif)
 
 ## Credits
 
